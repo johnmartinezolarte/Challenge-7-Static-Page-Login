@@ -1,0 +1,149 @@
+/* Todo el documento */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --Paleblue: hsl(225, 100%, 94%);
+    --Brightblue: hsl(245, 75%, 52%);
+    --Verypaleblue: hsl(225, 100%, 98%);
+    --Desaturatedblue: hsl(224, 23%, 55%);
+    --Darkblue: hsl(223, 47%, 23%);
+}
+body{
+    font-family: 'Red Hat Display', sans-serif;
+    background-color: var(--Verypaleblue);
+}
+
+/* Barra de navegación */
+.logo-nav{
+    height: 50px;
+}
+.navbar{
+    background-color: hsl(224, 60%, 76%);
+}
+.portafolio{
+    border-top: 1px solid var(--Brightblue);
+    border-bottom: 1px solid var(--Brightblue);
+}
+.dropdown-menu a:hover{
+    background-color: var(--Paleblue);
+}
+.navbar-toggler{
+    background-color: var(--Verypaleblue);
+}
+#registro:hover{
+    color:darkmagenta;
+}
+
+/* En todo el contenido de la página */
+.container-section{
+    background-color: var(--Paleblue);
+    padding: 25px;
+    border-radius: 30px;
+}
+
+/* Contenido Acerca*/
+.btn-contact:hover{
+    background:none;
+    color:#0d6efd;
+}
+
+/* Contenido Portafolio */
+.logo-crypto{
+    max-width: 180px;
+    height: 180px;
+}
+.logo-crypto:hover{
+    opacity: 80%;
+}
+.card-crypto{
+    background: transparent;
+    border: none;
+    box-shadow: 0px 0px 12px 1px palevioletred;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.start{
+    color: gold;
+    padding:5px;
+    animation: neonEffect 5s infinite;
+}
+@keyframes neonEffect{
+    0%, 35%, 45%, 65%, 100% {
+        text-shadow:
+        gold 0 0 3px,
+        gold 0 0 6px,
+        gold 0 0 12px;
+    }
+    40%, 60%{
+        text-shadow: none;
+    }
+}
+
+/* Contenido Preguntas Frecuentes */
+.titilo-acordeon{
+    background-color: hsl(224, 60%, 76%);
+    border-radius: 20px 20px 0 0;
+}
+.accordion-header{
+    border: solid 1px violet;
+}
+.accordion-button{
+    box-shadow: none !important;
+}
+
+/* Contenido Modal */
+.modal-header{
+    border-bottom: solid 1px blueviolet;
+}
+.modal-title{
+    color: blueviolet;
+}
+.form-control{
+    border: solid 2px blueviolet !important;
+    box-shadow: none !important;
+}
+.modal-footer{
+    border-top: solid 1px blueviolet;
+}
+.btn-cancelar{
+    color: blueviolet;
+    border: solid 1px blueviolet !important;
+}
+.btn-cancelar:hover{
+    background-color: blueviolet;
+    color: white;
+}
+.btn-enviar{
+    background-color: blueviolet !important;
+    border: solid 1px blueviolet !important;
+    color: white !important;
+}
+.btn-enviar:hover{
+    opacity: 90%;
+}
+
+/* Contenido footer */
+.footer{
+    background-color: hsl(224, 60%, 76%);
+}
+.logo-coex{
+    max-width: 170px;
+}
+.coded{
+    font-size: 15px;
+}
+.coded-john{
+    color:darkred !important;
+}
+
+/* Quitarle flechas a los input type number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
