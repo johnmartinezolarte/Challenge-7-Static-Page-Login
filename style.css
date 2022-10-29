@@ -103,9 +103,12 @@ body{
 .modal-title{
     color: blueviolet;
 }
-.form-control{
+.input-registro{
     border: solid 2px blueviolet !important;
     box-shadow: none !important;
+}
+#email::placeholder{
+    opacity: 80%;
 }
 .modal-footer{
     border-top: solid 1px blueviolet;
@@ -146,4 +149,11 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+/* Cambiar el background-color a los input autocompletados */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;
 }

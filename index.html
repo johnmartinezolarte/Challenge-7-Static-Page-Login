@@ -190,37 +190,37 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h1 class="modal-title fs-4 fw-bold" id="exampleModalLabel">Registro</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <p>Ingresa los datos para comunicarnos pronto:</p>
                             <form>
                                 <div class="mb-3">
                                     <label for="nombres" class="col-form-label fw-bold">Nombres</label>
-                                    <input type="text" class="form-control" id="nombres" maxlength="50">
-                                    <p id="alertNombre"></p>
+                                    <input type="text" class="form-control input-registro" id="nombres" maxlength="50">
+                                    <p class="alerta"></p>
                                 </div>
                                 <div class="mb-3">
                                     <label for="apellidos" class="col-form-label fw-bold">Apellidos</label>
-                                    <input type="text" class="form-control" id="apellidos" maxlength="50">
-                                    <p id="alertApellido"></p>
+                                    <input type="text" class="form-control input-registro" id="apellidos" maxlength="50">
+                                    <p class="alerta"></p>
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="col-form-label fw-bold">Correo Electrónico</label>
-                                    <input type="email" class="form-control" id="email">
-                                    <p id="alertEmail"></p>
+                                    <input type="email" class="form-control input-registro" id="email" placeholder="email@dominio.com">
+                                    <p class="alerta"></p>
                                 </div>
-
                                 <div class="mb-3">
                                     <label for="celular" class="col-form-label fw-bold">Celular</label>
-                                    <input type="number" class="form-control" id="celular">
-                                    <p id="alertCelular"></p>
+                                    <input type="number" class="form-control input-registro" id="celular">
+                                    <p class="alerta"></p>
                                 </div>
                             </form>
+                            <p class="alerta-ingreso"></p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-cancelar" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn fw-bold btn-enviar">Enviar</button>
+                            <button type="button" class="btn btn-cancelar" data-bs-dismiss="modal" id="btnCancelar">Cancelar</button>
+                            <button type="button" class="btn fw-bold btn-enviar" id="btnEnviar" disabled>Enviar</button>
                         </div>
                     </div>
                 </div>
