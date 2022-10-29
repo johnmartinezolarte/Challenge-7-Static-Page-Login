@@ -129,6 +129,19 @@ body{
 .btn-enviar:hover{
     opacity: 90%;
 }
+.spinner{
+    border:8px solid #f2f2f2;
+    border-bottom: 8px solid #33dba9;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: loader 2s linear infinite;
+    display: none;
+}
+@keyframes loader{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
 
 /* Contenido footer */
 .footer{

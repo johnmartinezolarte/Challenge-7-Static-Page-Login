@@ -5,13 +5,22 @@ const alertaIngreso=document.querySelector('.alerta-ingreso');
 const btnEnviar=document.getElementById('btnEnviar');
 const btnCancelar=document.getElementById('btnCancelar');
 const btnCloseModal=document.querySelector('.btn-close-modal');
-const elementos=document.querySelector('.elementos');
+const spinner=document.querySelector('.spinner');
+const elementos=document.getElementById('elementos');
 
 // Se declaran las variables
 const checkNameLastName=/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$/;
 const checkEmail=/^([a-z0-9_\.-]+)@dominio\.com$/;
 const checkMobile=/^3\d{9}$/;
-let namE, lastName, email, mobile;
+let namE, lastName, email, mobile, user;
+
+// Se declara función constructora para almacenar los datos
+function data(nombre, apellido, email, celular){
+    this.Nombres=nombre;
+    this.Apellidos=apellido;
+    this.'Correo Electronico'=email;
+    this.Celular=celular;
+}
 
 // Se definen los eventos asociados
 inputs.forEach((x,i)=>{
@@ -54,30 +63,78 @@ function request(e){
     }
     // Habilitar el botón Enviar
     if(namE&&lastName&&email&&mobile){
-        btnEnviar.disabled = false;
+        btnEnviar.disabled=false;
     }else{
-        btnEnviar.disabled = true;
+        btnEnviar.disabled=true;
     }
 };
 
 // Función enviar los datos
 function sendData(){
+    // Ocultar boton enviar, mostrar loading y registro con éxito
+    btnEnviar.disabled=true;
+    spinner.style.display='block';
+    let textAlert=document.createTextNode('¡Successful Registration!');
+    alertaIngreso.appendChild(textAlert);
+
+    // Imprimir datos en Elementos
+    user=new data(inputs[0].value,inputs[1].value,inputs[2].value,inputs[3].value);
+
+
+    let ul=document.createElement('ul');
+    ul.classList.add('list-group','mt-3');
+
+    for(let key in user){
+        let li=document.createElement('li');
+        li.classList.add('list-group-item');
+
+
+        let textli=document.createTextNode(`${key}: ${user[key]}`);
+        li.appendChild(textli);
+
+        ul.appendChild(li)
+
+    }
+
+    elementos.appendChild(ul);
+
+
+
     
 
+
+    
+    /* li.className='list-group-item';
+    btnDelete.className='btn btn-light btn-outline-danger btn-sm float-end delete';
+    li.appendChild(document.createTextNode(newElement));
+    btnDelete.appendChild(document.createTextNode('X'));
+
+    listaElementos.appendChild(li);
+    li.appendChild(btnDelete) */
+
+    
+    
+
+    //reiniciar el objeto user
+
+
+
     // Activar función cerrar y limpiar el modal
-    setTimeout(afterSend,3000,btnCloseModal,elementos);
+    setTimeout(afterSend,3000,btnCloseModal);
 };
 
 // Función cerrar y limpiar el modal tras el envío de los datos
-function afterSend(eUno,eDos){
-    eUno.click();
-    eDos.scrollIntoView();
+function afterSend(e){
+    spinner.style.display='none';
+    alertaIngreso.textContent='';
+    e.click();
+    window.location.hash="#elementos";
+   /*  window.location.reload(false); */ // duda si es true o false
 }
-const prueba=document.querySelector('.prueba')
 
 // Función limpiar el modal para los botones cerrar y cancelar
 function refreshModal(){
-    btnEnviar.disabled = true;
+    btnEnviar.disabled=true;
     inputs.forEach((x)=>{
         x.value='';
     });
