@@ -143,6 +143,11 @@ body{
     100%{transform: rotate(360deg);}
 }
 
+/* Elementos */
+.elementos-li{
+    border: solid 2px blueviolet;
+}
+
 /* Contenido footer */
 .footer{
     background-color: hsl(224, 60%, 76%);

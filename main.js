@@ -16,9 +16,9 @@ let namE, lastName, email, mobile, user;
 
 // Se declara función constructora para almacenar los datos
 function data(nombre, apellido, email, celular){
-    this.Nombres=nombre;
-    this.Apellidos=apellido;
-    this.'Correo Electronico'=email;
+    this.Nombre=nombre;
+    this.Apellido=apellido;
+    this.Correo=email;
     this.Celular=celular;
 }
 
@@ -79,48 +79,19 @@ function sendData(){
 
     // Imprimir datos en Elementos
     user=new data(inputs[0].value,inputs[1].value,inputs[2].value,inputs[3].value);
-
-
     let ul=document.createElement('ul');
     ul.classList.add('list-group','mt-3');
-
     for(let key in user){
         let li=document.createElement('li');
-        li.classList.add('list-group-item');
-
-
-        let textli=document.createTextNode(`${key}: ${user[key]}`);
+        li.classList.add('list-group-item','elementos-li');
+        let textli=document.createTextNode(`${key} Usuario: ${user[key]}`);
         li.appendChild(textli);
-
         ul.appendChild(li)
-
     }
-
     elementos.appendChild(ul);
 
-
-
-    
-
-
-    
-    /* li.className='list-group-item';
-    btnDelete.className='btn btn-light btn-outline-danger btn-sm float-end delete';
-    li.appendChild(document.createTextNode(newElement));
-    btnDelete.appendChild(document.createTextNode('X'));
-
-    listaElementos.appendChild(li);
-    li.appendChild(btnDelete) */
-
-    
-    
-
-    //reiniciar el objeto user
-
-
-
     // Activar función cerrar y limpiar el modal
-    setTimeout(afterSend,3000,btnCloseModal);
+    setTimeout(afterSend,2500,btnCloseModal);
 };
 
 // Función cerrar y limpiar el modal tras el envío de los datos
@@ -128,8 +99,11 @@ function afterSend(e){
     spinner.style.display='none';
     alertaIngreso.textContent='';
     e.click();
-    window.location.hash="#elementos";
-   /*  window.location.reload(false); */ // duda si es true o false
+
+    // Reiniciar el objeto user
+    for(let key in user){
+        user[key]='';
+    }
 }
 
 // Función limpiar el modal para los botones cerrar y cancelar
